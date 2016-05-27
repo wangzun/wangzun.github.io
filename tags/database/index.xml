@@ -1,23 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>wangzun&#39;s blog</title>
-    <link>http://wangzun.github.io/</link>
-    <description>Recent content on wangzun&#39;s blog</description>
+    <title>Database on wangzun&#39;s blog</title>
+    <link>http://wangzun.github.io/tags/database/</link>
+    <description>Recent content in Database on wangzun&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 26 May 2016 16:05:06 +0800</lastBuildDate>
-    <atom:link href="http://wangzun.github.io/index.xml" rel="self" type="application/rss+xml" />
-    
-    <item>
-      <title>hugo create blog</title>
-      <link>http://wangzun.github.io/posts/hugo-create-blog/</link>
-      <pubDate>Thu, 26 May 2016 16:05:06 +0800</pubDate>
-      
-      <guid>http://wangzun.github.io/posts/hugo-create-blog/</guid>
-      <description>&lt;p&gt;&amp;hellip;&amp;hellip;&lt;/p&gt;
-</description>
-    </item>
+    <lastBuildDate>Thu, 26 May 2016 16:05:06 +0900</lastBuildDate>
+    <atom:link href="http://wangzun.github.io/tags/database/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>mongodb学习笔记</title>
