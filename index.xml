@@ -27,16 +27,45 @@
       <guid>http://wangzun.github.io/posts/mongodb-notes/</guid>
       <description>
 
-&lt;p&gt;#####分片，副本级集群对比&lt;/p&gt;
+&lt;h5 id=&#34;分片-副本级集群对比:afb814d1e0b452328a71bc59001afa4a&#34;&gt;分片，副本级集群对比&lt;/h5&gt;
 
-&lt;p&gt;||分片|副本级集群|
-|-|-|-|
-|实现意义|提升并发性能|数据沉余，提升度性能|
-|架构上|水平化|中心化|
-|实现原理|数据分散|数据镜像|
-|维护成本|相对高|较容易|&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;分片&lt;/th&gt;
+&lt;th&gt;副本级集群&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
 
-&lt;p&gt;#####分片节点&lt;/p&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;实现意义&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;提升并发性能&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;数据沉余，提升度性能&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;架构上&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;水平化&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;中心化&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;实现原理&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;数据分散&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;数据镜像&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;维护成本&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;相对高&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;较容易&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h5 id=&#34;分片节点:afb814d1e0b452328a71bc59001afa4a&#34;&gt;分片节点&lt;/h5&gt;
 
 &lt;p&gt;Shard节点:
 &lt;code&gt;存取数据的节点( 单个mongod)&lt;/code&gt;
@@ -45,7 +74,7 @@ Config server:
 Mongos
 &lt;code&gt;接收请求，进行消息路由&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;#####成员节点启动参数&lt;/p&gt;
+&lt;h5 id=&#34;成员节点启动参数:afb814d1e0b452328a71bc59001afa4a&#34;&gt;成员节点启动参数&lt;/h5&gt;
 
 &lt;p&gt;Shard:&lt;/p&gt;
 
@@ -77,7 +106,7 @@ mongod --shardsvr --rpelSet (副本集)
 &amp;gt; db.shards.find()
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;产看shard状态&lt;/p&gt;
+&lt;p&gt;查看shard状态&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;&amp;gt; db.printShardingStatus()
 &lt;/code&gt;&lt;/pre&gt;
