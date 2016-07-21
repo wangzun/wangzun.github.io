@@ -3,8 +3,13 @@
   
   <url>
     <loc>http://wangzun.github.io/</loc>
-    <lastmod>2016-05-26T16:05:06+08:00</lastmod>
+    <lastmod>2016-07-21T16:05:06+09:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://wangzun.github.io/posts/erlang/</loc>
+    <lastmod>2016-07-21T16:05:06+09:00</lastmod>
   </url>
   
   <url>
