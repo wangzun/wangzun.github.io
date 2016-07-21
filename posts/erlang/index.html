@@ -58,7 +58,7 @@
         },
         "datePublished": "2016-07-21",
         "description": "",
-        "wordCount":  129 
+        "wordCount":  146 
     }
     </script>
     
@@ -141,41 +141,40 @@ Shell got test
 ok
 </code></pre>
 
-<h5 id="成员节点启动参数:9f3b6997f78b7d4fd24f17461ec402ee">成员节点启动参数</h5>
+<p><code>catch_exception(true)</code></p>
 
-<p>Shard:</p>
-
-<pre><code>mongod --shardsvr
-mongod --shardsvr --rpelSet (副本集)
+<pre><code>1&gt; Table = ets:new(test1,[]).
+16400
+2&gt; ets:info(Table).
+[{read_concurrency,false},
+ {write_concurrency,false},
+ {compressed,false},
+ {memory,305},
+ {owner,&lt;0.33.0&gt;},
+ {heir,none},
+ {name,test1},
+ {size,0},
+ {node,nonode@nohost},
+ {named_table,false},
+ {type,set},
+ {keypos,1},
+ {protection,protected}]
+3&gt;
+3&gt; 1/0.
+** exception error: an error occurred when evaluating an arithmetic expression
+     in operator  '/'/2
+        called as 1 / 0
+4&gt;
+4&gt; ets:info(Table).
+undefined
 </code></pre>
 
-<p>Config server:</p>
+<h5 id="erlang-node:9f3b6997f78b7d4fd24f17461ec402ee">erlang node</h5>
 
-<pre><code>mongod --configsvr
-</code></pre>
+<p><code>erl</code></p>
 
-<p>Mongos</p>
+<pre><code>erl -name test1@0.0.0.0
 
-<pre><code>mongos --configdb &lt;configdb server&gt;
-</code></pre>
-
-<p>分片步骤</p>
-
-<pre><code>&gt; use admin
-&gt; sh.addShard(&quot;ip:port&quot;)
-&gt; db.runCommand({enablesharding:&quot;db&quot;})
-&gt; db.runCommand({&quot;shardcollection&quot;:&quot;db.collection&quot;,key:{&quot;key&quot;:1}})
-</code></pre>
-
-<p>查看shard成员</p>
-
-<pre><code>&gt; use config
-&gt; db.shards.find()
-</code></pre>
-
-<p>查看shard状态</p>
-
-<pre><code>&gt; db.printShardingStatus()
 </code></pre>
 
     <div id="social-bar">

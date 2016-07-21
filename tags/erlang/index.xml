@@ -56,41 +56,40 @@ Shell got test
 ok
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h5 id=&#34;成员节点启动参数:9f3b6997f78b7d4fd24f17461ec402ee&#34;&gt;成员节点启动参数&lt;/h5&gt;
+&lt;p&gt;&lt;code&gt;catch_exception(true)&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;Shard:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;mongod --shardsvr
-mongod --shardsvr --rpelSet (副本集)
+&lt;pre&gt;&lt;code&gt;1&amp;gt; Table = ets:new(test1,[]).
+16400
+2&amp;gt; ets:info(Table).
+[{read_concurrency,false},
+ {write_concurrency,false},
+ {compressed,false},
+ {memory,305},
+ {owner,&amp;lt;0.33.0&amp;gt;},
+ {heir,none},
+ {name,test1},
+ {size,0},
+ {node,nonode@nohost},
+ {named_table,false},
+ {type,set},
+ {keypos,1},
+ {protection,protected}]
+3&amp;gt;
+3&amp;gt; 1/0.
+** exception error: an error occurred when evaluating an arithmetic expression
+     in operator  &#39;/&#39;/2
+        called as 1 / 0
+4&amp;gt;
+4&amp;gt; ets:info(Table).
+undefined
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;Config server:&lt;/p&gt;
+&lt;h5 id=&#34;erlang-node:9f3b6997f78b7d4fd24f17461ec402ee&#34;&gt;erlang node&lt;/h5&gt;
 
-&lt;pre&gt;&lt;code&gt;mongod --configsvr
-&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;code&gt;erl&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;Mongos&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;erl -name test1@0.0.0.0
 
-&lt;pre&gt;&lt;code&gt;mongos --configdb &amp;lt;configdb server&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;分片步骤&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;gt; use admin
-&amp;gt; sh.addShard(&amp;quot;ip:port&amp;quot;)
-&amp;gt; db.runCommand({enablesharding:&amp;quot;db&amp;quot;})
-&amp;gt; db.runCommand({&amp;quot;shardcollection&amp;quot;:&amp;quot;db.collection&amp;quot;,key:{&amp;quot;key&amp;quot;:1}})
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;查看shard成员&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;gt; use config
-&amp;gt; db.shards.find()
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;查看shard状态&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;gt; db.printShardingStatus()
 &lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>
