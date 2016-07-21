@@ -56,7 +56,8 @@ Shell got test
 ok
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;&lt;code&gt;catch_exception(true)&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;catch_exception(true)&lt;/code&gt;
+没有catch_exception(true)&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;1&amp;gt; Table = ets:new(test1,[]).
 16400
@@ -82,6 +83,30 @@ ok
 4&amp;gt;
 4&amp;gt; ets:info(Table).
 undefined
+5&amp;gt; self().
+&amp;lt;0.37.0&amp;gt;
+6&amp;gt; 1/0.
+** exception error: an error occurred when evaluating an arithmetic expression
+     in operator  &#39;/&#39;/2
+        called as 1 / 0
+7&amp;gt; self().
+&amp;lt;0.41.0&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;使用catch_exception(true)&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;8&amp;gt; catch_exception(true).
+false
+9&amp;gt;
+9&amp;gt; self().
+&amp;lt;0.41.0&amp;gt;
+10&amp;gt;
+10&amp;gt; 1/0.
+* exception error: an error occurred when evaluating an arithmetic expression
+    in operator  &#39;/&#39;/2
+       called as 1 / 0
+11&amp;gt; self().
+&amp;lt;0.41.0&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;h5 id=&#34;erlang-node:9f3b6997f78b7d4fd24f17461ec402ee&#34;&gt;erlang node&lt;/h5&gt;

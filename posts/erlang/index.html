@@ -58,7 +58,7 @@
         },
         "datePublished": "2016-07-21",
         "description": "",
-        "wordCount":  146 
+        "wordCount":  207 
     }
     </script>
     
@@ -141,7 +141,8 @@ Shell got test
 ok
 </code></pre>
 
-<p><code>catch_exception(true)</code></p>
+<p><code>catch_exception(true)</code>
+没有catch_exception(true)</p>
 
 <pre><code>1&gt; Table = ets:new(test1,[]).
 16400
@@ -167,6 +168,30 @@ ok
 4&gt;
 4&gt; ets:info(Table).
 undefined
+5&gt; self().
+&lt;0.37.0&gt;
+6&gt; 1/0.
+** exception error: an error occurred when evaluating an arithmetic expression
+     in operator  '/'/2
+        called as 1 / 0
+7&gt; self().
+&lt;0.41.0&gt;
+</code></pre>
+
+<p>使用catch_exception(true)</p>
+
+<pre><code>8&gt; catch_exception(true).
+false
+9&gt;
+9&gt; self().
+&lt;0.41.0&gt;
+10&gt;
+10&gt; 1/0.
+* exception error: an error occurred when evaluating an arithmetic expression
+    in operator  '/'/2
+       called as 1 / 0
+11&gt; self().
+&lt;0.41.0&gt;
 </code></pre>
 
 <h5 id="erlang-node:9f3b6997f78b7d4fd24f17461ec402ee">erlang node</h5>
