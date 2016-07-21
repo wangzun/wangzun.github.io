@@ -24,6 +24,11 @@
 &lt;pre&gt;&lt;code&gt;Prints a term using the record definitions known to the shell. All of Term is printed; the depth is not limited as is the case when a return value is printed.
 &lt;/code&gt;&lt;/pre&gt;
 
+&lt;p&gt;&lt;code&gt;b()&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Prints the current variable bindings.
+&lt;/code&gt;&lt;/pre&gt;
+
 &lt;h5 id=&#34;成员节点启动参数:9f3b6997f78b7d4fd24f17461ec402ee&#34;&gt;成员节点启动参数&lt;/h5&gt;
 
 &lt;p&gt;Shard:&lt;/p&gt;
