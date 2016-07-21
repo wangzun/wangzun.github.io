@@ -29,6 +29,33 @@
 &lt;pre&gt;&lt;code&gt;Prints the current variable bindings.
 &lt;/code&gt;&lt;/pre&gt;
 
+&lt;p&gt;&lt;code&gt;f() , f(X)&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Removes variable bindings.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;v(N)&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Uses the return value of command N in the current command
+2&amp;gt; fun() -&amp;gt; ok end.
+#Fun&amp;lt;erl_eval.20.54118792&amp;gt;
+3&amp;gt;
+3&amp;gt; Fun = v(-1).
+#Fun&amp;lt;erl_eval.20.54118792&amp;gt;
+4&amp;gt; Fun.
+#Fun&amp;lt;erl_eval.20.54118792&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;flush()&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;2&amp;gt; Pid = self().
+3&amp;gt; erlang:spawn(fun() -&amp;gt; Pid ! test end).
+&amp;lt;0.38.0&amp;gt;
+4&amp;gt; flush().
+Shell got test
+ok
+&lt;/code&gt;&lt;/pre&gt;
+
 &lt;h5 id=&#34;成员节点启动参数:9f3b6997f78b7d4fd24f17461ec402ee&#34;&gt;成员节点启动参数&lt;/h5&gt;
 
 &lt;p&gt;Shard:&lt;/p&gt;
