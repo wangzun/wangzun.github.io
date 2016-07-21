@@ -17,7 +17,7 @@
       <guid>http://wangzun.github.io/posts/erlang/</guid>
       <description>
 
-&lt;p&gt;#####1. erlang shell用法&lt;/p&gt;
+&lt;h5 id=&#34;1-erlang-shell用法:9f3b6997f78b7d4fd24f17461ec402ee&#34;&gt;1. erlang shell用法&lt;/h5&gt;
 
 &lt;p&gt;&lt;code&gt;rp(Term)&lt;/code&gt;&lt;/p&gt;
 
