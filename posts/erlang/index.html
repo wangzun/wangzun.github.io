@@ -7,7 +7,7 @@
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-        <meta property="og:title" content=" erlang小细节 &middot;  wangzun&#39;s blog" />
+        <meta property="og:title" content=" erlang有用的小细节 &middot;  wangzun&#39;s blog" />
         <meta property="og:site_name" content="wangzun&#39;s blog" />
         <meta property="og:url" content="http://wangzun.github.io/posts/erlang/" />
 
@@ -20,12 +20,12 @@
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:site" content="@" />
         <meta name="twitter:creator" content="@" />
-        <meta name="twitter:title" content="erlang小细节" />
+        <meta name="twitter:title" content="erlang有用的小细节" />
         <meta name="twitter:description" content="" />
         <meta name="twitter:url" content="http://wangzun.github.io/posts/erlang/" />
     
 
-        <title> erlang小细节 &middot;  wangzun&#39;s blog</title>
+        <title> erlang有用的小细节 &middot;  wangzun&#39;s blog</title>
 
     
         <meta name="description" content="code and life" />
@@ -51,14 +51,14 @@
     { 
         "@context": "http://schema.org",
         "@type": "Article",
-        "headline": "erlang小细节",
+        "headline": "erlang有用的小细节",
         "author": {
             "@type": "Person",
             "name": "http://profiles.google.com/?rel=author"
         },
         "datePublished": "2016-07-21",
         "description": "",
-        "wordCount":  38 
+        "wordCount":  71 
     }
     </script>
     
@@ -99,10 +99,15 @@
         
         </span>
     </div>
-    <h1 class="post-title">erlang小细节</h1>
+    <h1 class="post-title">erlang有用的小细节</h1>
     
 
-<h5 id="erlang-shell用法:9f3b6997f78b7d4fd24f17461ec402ee">erlang shell用法</h5>
+<p>#####1. erlang shell用法</p>
+
+<p><code>rp(Term)</code></p>
+
+<pre><code>Prints a term using the record definitions known to the shell. All of Term is printed; the depth is not limited as is the case when a return value is printed.
+</code></pre>
 
 <h5 id="成员节点启动参数:9f3b6997f78b7d4fd24f17461ec402ee">成员节点启动参数</h5>
 
@@ -144,7 +149,7 @@ mongod --shardsvr --rpelSet (副本集)
     <div id="social-bar">
 	<ul class="rrssb-buttons clearfix">
       <li class="email">
-          <a href="mailto:?subject=erlang%e5%b0%8f%e7%bb%86%e8%8a%82&amp;body=http://wangzun.github.io/posts/erlang/">
+          <a href="mailto:?subject=erlang%e6%9c%89%e7%94%a8%e7%9a%84%e5%b0%8f%e7%bb%86%e8%8a%82&amp;body=http://wangzun.github.io/posts/erlang/">
               <span class="icon">
                   <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="28px" height="28px" viewBox="0 0 28 28" enable-background="new 0 0 28 28" xml:space="preserve">
                       <path transform="scale(0.014,-0.014) translate(0,-1670)" d="M1792 826v-794q0 -66 -47 -113t-113 -47h-1472q-66 0 -113 47t-47 113v794q44 -49 101 -87q362 -246 497 -345q57 -42 92.5 -65.5t94.5 -48t110 -24.5h1h1q51 0 110 24.5t94.5 48t92.5 65.5q170 123 498 345q57 39 100 87zM1792 1120q0 -79 -49 -151t-122 -123 q-376 -261 -468 -325q-10 -7 -42.5 -30.5t-54 -38t-52 -32.5t-57.5 -27t-50 -9h-1h-1q-23 0 -50 9t-57.5 27t-52 32.5t-54 38t-42.5 30.5q-91 64 -262 182.5t-205 142.5q-62 42 -117 115.5t-55 136.5q0 78 41.5 130t118.5 52h1472q65 0 112.5 -47t47.5 -113z"/>
@@ -164,7 +169,7 @@ mongod --shardsvr --rpelSet (副本集)
           </a>
       </li>
 			<li class="twitter">
-          <a href="http://twitter.com/home?status=erlang%e5%b0%8f%e7%bb%86%e8%8a%82%20http://wangzun.github.io/posts/erlang/" class="popup">
+          <a href="http://twitter.com/home?status=erlang%e6%9c%89%e7%94%a8%e7%9a%84%e5%b0%8f%e7%bb%86%e8%8a%82%20http://wangzun.github.io/posts/erlang/" class="popup">
               <span class="icon">
                   <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="28px" height="28px" viewBox="0 0 28 28" enable-background="new 0 0 28 28" xml:space="preserve">
 		                  <path d="M24.253,8.756C24.689,17.08,18.297,24.182,9.97,24.62c-3.122,0.162-6.219-0.646-8.861-2.32 c2.703,0.179,5.376-0.648,7.508-2.321c-2.072-0.247-3.818-1.661-4.489-3.638c0.801,0.128,1.62,0.076,2.399-0.155 C4.045,15.72,2.215,13.6,2.115,11.077c0.688,0.275,1.426,0.407,2.168,0.386c-2.135-1.65-2.729-4.621-1.394-6.965 C5.575,7.816,9.54,9.84,13.803,10.071c-0.842-2.739,0.694-5.64,3.434-6.482c2.018-0.623,4.212,0.044,5.546,1.683 c1.186-0.213,2.318-0.662,3.329-1.317c-0.385,1.256-1.247,2.312-2.399,2.942c1.048-0.106,2.069-0.394,3.019-0.851 C26.275,7.229,25.39,8.196,24.253,8.756z"/>
@@ -174,7 +179,7 @@ mongod --shardsvr --rpelSet (副本集)
           </a>
       </li>
 			<li class="linkedin">
-          <a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=http://wangzun.github.io/posts/erlang/&amp;title=erlang%e5%b0%8f%e7%bb%86%e8%8a%82&amp;summary=erlang%20shell%e7%94%a8%e6%b3%95%20%e6%88%90%e5%91%98%e8%8a%82%e7%82%b9%e5%90%af%e5%8a%a8%e5%8f%82%e6%95%b0%20Shard%3a%20mongod%20--shardsvr%20mongod%20--shardsvr%20--rpelSet%20%28%e5%89%af%e6%9c%ac%e9%9b%86%29%20Config%20server%3a%20mongod%20--configsvr%20Mongos%20mongos%20--configdb%20%26lt%3bconfigdb%20server%26gt%3b%20%e5%88%86%e7%89%87%e6%ad%a5%e9%aa%a4%20%26gt%3b%20use%20admin%20%26gt%3b%20sh.addShard%28%26quot%3bip%3aport%26quot%3b%29%20%26gt%3b%20db.runCommand%28%7benablesharding%3a%26quot%3bdb%26quot%3b%7d%29%20%26gt%3b%20db.runCommand%28%7b%26quot%3bshardcollection%26quot%3b%3a%26quot%3bdb.collection%26quot%3b%2ckey%3a%7b%26quot%3bkey%26quot%3b%3a1%7d%7d%29%20%e6%9f%a5%e7%9c%8bshard%e6%88%90%e5%91%98%20%26gt%3b%20use%20config%20%26gt%3b%20db.shards.find%28%29%20%e6%9f%a5%e7%9c%8bshard%e7%8a%b6%e6%80%81%20%26gt%3b%20db.printShardingStatus%28%29..." class="popup">
+          <a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=http://wangzun.github.io/posts/erlang/&amp;title=erlang%e6%9c%89%e7%94%a8%e7%9a%84%e5%b0%8f%e7%bb%86%e8%8a%82&amp;summary=%23%23%23%23%231.%20erlang%20shell%e7%94%a8%e6%b3%95%20rp%28Term%29%20Prints%20a%20term%20using%20the%20record%20definitions%20known%20to%20the%20shell.%20All%20of%20Term%20is%20printed%3b%20the%20depth%20is%20not%20limited%20as%20is%20the%20case%20when%20a%20return%20value%20is%20printed.%20%e6%88%90%e5%91%98%e8%8a%82%e7%82%b9%e5%90%af%e5%8a%a8%e5%8f%82%e6%95%b0%20Shard%3a%20mongod%20--shardsvr%20mongod%20--shardsvr%20--rpelSet%20%28%e5%89%af%e6%9c%ac%e9%9b%86%29%20Config%20server%3a%20mongod%20--configsvr%20Mongos%20mongos%20--configdb%20%26lt%3bconfigdb%20server%26gt%3b%20%e5%88%86%e7%89%87%e6%ad%a5%e9%aa%a4%20%26gt%3b%20use%20admin%20%26gt%3b%20sh.addShard%28%26quot%3bip%3aport%26quot%3b%29%20%26gt%3b%20db.runCommand%28%7benablesharding%3a%26quot%3bdb%26quot%3b%7d%29%20%26gt%3b%20db.runCommand%28%7b%26quot%3bshardcollection%26quot%3b%3a%26quot%3bdb.collection%26quot%3b%2ckey%3a%7b%26quot%3bkey%26quot%3b%3a1%7d%7d%29%20%e6%9f%a5%e7%9c%8bshard%e6%88%90%e5%91%98%20%26gt%3b%20use%20config%20%26gt%3b%20db.shards.find%28%29%20%e6%9f%a5%e7%9c%8bshard%e7%8a%b6%e6%80%81%20%26gt%3b..." class="popup">
               <span class="icon">
                   <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="28px" height="28px" viewBox="0 0 28 28" enable-background="new 0 0 28 28" xml:space="preserve">
                       <path d="M25.424,15.887v8.447h-4.896v-7.882c0-1.979-0.709-3.331-2.48-3.331c-1.354,0-2.158,0.911-2.514,1.803 c-0.129,0.315-0.162,0.753-0.162,1.194v8.216h-4.899c0,0,0.066-13.349,0-14.731h4.899v2.088c-0.01,0.016-0.023,0.032-0.033,0.048 h0.033V11.69c0.65-1.002,1.812-2.435,4.414-2.435C23.008,9.254,25.424,11.361,25.424,15.887z M5.348,2.501 c-1.676,0-2.772,1.092-2.772,2.539c0,1.421,1.066,2.538,2.717,2.546h0.032c1.709,0,2.771-1.132,2.771-2.546 C8.054,3.593,7.019,2.501,5.343,2.501H5.348z M2.867,24.334h4.897V9.603H2.867V24.334z"/>
@@ -185,7 +190,7 @@ mongod --shardsvr --rpelSet (副本集)
       </li>
       <li class="tumblr">
 					<script>
-						document.write('<a href="http://www.tumblr.com/share?v=3&amp;u=' + encodeURIComponent('http:\/\/wangzun.github.io\/posts\/erlang\/') + '&amp;t=erlang小细节" class="popup">');
+						document.write('<a href="http://www.tumblr.com/share?v=3&amp;u=' + encodeURIComponent('http:\/\/wangzun.github.io\/posts\/erlang\/') + '&amp;t=erlang有用的小细节" class="popup">');
 					</script>
               <span class="icon">
                   <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" width="28px" height="28px" viewBox="0 0 28 28" enable-background="new 0 0 28 28" xml:space="preserve">
@@ -230,7 +235,7 @@ mongod --shardsvr --rpelSet (副本集)
 						if (firstimg !== undefined) {
 							imgurl = firstimg.src;
 						}
-						document.write('<a href="http://pinterest.com/pin/create/button/?url=http:\/\/wangzun.github.io\/posts\/erlang\/&amp;media=' + imgurl + '&amp;description=erlang小细节" class="popup">');
+						document.write('<a href="http://pinterest.com/pin/create/button/?url=http:\/\/wangzun.github.io\/posts\/erlang\/&amp;media=' + imgurl + '&amp;description=erlang有用的小细节" class="popup">');
 					</script>
               <span class="icon">
                   <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="28px" height="28px" viewBox="0 0 28 28" enable-background="new 0 0 28 28" xml:space="preserve">
@@ -269,7 +274,7 @@ mongod --shardsvr --rpelSet (副本集)
     <script type="text/javascript">
       var disqus_shortname = 'wangzun';
       var disqus_identifier = 'http:\/\/wangzun.github.io\/posts\/erlang\/';
-      var disqus_title = 'erlang小细节';
+      var disqus_title = 'erlang有用的小细节';
       var disqus_url = 'http:\/\/wangzun.github.io\/posts\/erlang\/';
       (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

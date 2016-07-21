@@ -10,14 +10,19 @@
     <atom:link href="http://wangzun.github.io/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>erlang小细节</title>
+      <title>erlang有用的小细节</title>
       <link>http://wangzun.github.io/posts/erlang/</link>
       <pubDate>Thu, 21 Jul 2016 16:05:06 +0900</pubDate>
       
       <guid>http://wangzun.github.io/posts/erlang/</guid>
       <description>
 
-&lt;h5 id=&#34;erlang-shell用法:9f3b6997f78b7d4fd24f17461ec402ee&#34;&gt;erlang shell用法&lt;/h5&gt;
+&lt;p&gt;#####1. erlang shell用法&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;rp(Term)&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Prints a term using the record definitions known to the shell. All of Term is printed; the depth is not limited as is the case when a return value is printed.
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;h5 id=&#34;成员节点启动参数:9f3b6997f78b7d4fd24f17461ec402ee&#34;&gt;成员节点启动参数&lt;/h5&gt;
 
