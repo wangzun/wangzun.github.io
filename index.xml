@@ -56,8 +56,9 @@ Shell got test
 ok
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;&lt;code&gt;catch_exception(true)&lt;/code&gt;
-没有catch_exception(true)&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;catch_exception(true)&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;没有catch_exception(true)&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;1&amp;gt; Table = ets:new(test1,[]).
 16400
@@ -109,12 +110,24 @@ false
 &amp;lt;0.41.0&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h5 id=&#34;erlang-node:9f3b6997f78b7d4fd24f17461ec402ee&#34;&gt;erlang node&lt;/h5&gt;
+&lt;h5 id=&#34;2-erlang-node:9f3b6997f78b7d4fd24f17461ec402ee&#34;&gt;2.erlang node&lt;/h5&gt;
 
-&lt;p&gt;&lt;code&gt;erl&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;启动分布式节点&lt;/code&gt;&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;erl -name test1@0.0.0.0
 
+net_kernel:start([&#39;test1@0.0.0.0&#39;]).
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;-hidden&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;nodes()
+ets:tab2list(sys_dist)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;rpc&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;-kernel dist_auto_connect never
 &lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>

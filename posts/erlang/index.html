@@ -58,7 +58,7 @@
         },
         "datePublished": "2016-07-21",
         "description": "",
-        "wordCount":  207 
+        "wordCount":  215 
     }
     </script>
     
@@ -141,8 +141,9 @@ Shell got test
 ok
 </code></pre>
 
-<p><code>catch_exception(true)</code>
-没有catch_exception(true)</p>
+<p><code>catch_exception(true)</code></p>
+
+<p>没有catch_exception(true)</p>
 
 <pre><code>1&gt; Table = ets:new(test1,[]).
 16400
@@ -194,12 +195,24 @@ false
 &lt;0.41.0&gt;
 </code></pre>
 
-<h5 id="erlang-node:9f3b6997f78b7d4fd24f17461ec402ee">erlang node</h5>
+<h5 id="2-erlang-node:9f3b6997f78b7d4fd24f17461ec402ee">2.erlang node</h5>
 
-<p><code>erl</code></p>
+<p><code>启动分布式节点</code></p>
 
 <pre><code>erl -name test1@0.0.0.0
 
+net_kernel:start(['test1@0.0.0.0']).
+</code></pre>
+
+<p><code>-hidden</code></p>
+
+<pre><code>nodes()
+ets:tab2list(sys_dist)
+</code></pre>
+
+<p><code>rpc</code></p>
+
+<pre><code>-kernel dist_auto_connect never
 </code></pre>
 
     <div id="social-bar">
