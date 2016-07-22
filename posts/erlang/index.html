@@ -58,7 +58,7 @@
         },
         "datePublished": "2016-07-21",
         "description": "",
-        "wordCount":  224 
+        "wordCount":  272 
     }
     </script>
     
@@ -207,13 +207,21 @@ net_kernel:start(['test1@0.0.0.0']).
 <p><code>-hidden</code></p>
 
 <pre><code>Hidden connections are not published on either of the connected nodes
+a,b节点为普通节点，c为hidden节点，当a与c连接，b与c连接后，a与b不会连接
+net_kernel:connect_node(Node)
 nodes()
 ets:tab2list(sys_dist)
 </code></pre>
 
 <p><code>rpc</code></p>
 
-<pre><code>v
+<pre><code>-kernel dist_auto_connect never
+
+</code></pre>
+
+<p><code>group_leader</code></p>
+
+<pre><code>Every process is a member of some process group and all groups have a group leader. All I/O from the group is channeled to the group leader. When a new process is spawned, it gets the same group leader as the spawning process.
 </code></pre>
 
     <div id="social-bar">

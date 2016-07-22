@@ -122,13 +122,21 @@ net_kernel:start([&#39;test1@0.0.0.0&#39;]).
 &lt;p&gt;&lt;code&gt;-hidden&lt;/code&gt;&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;Hidden connections are not published on either of the connected nodes
+a,b节点为普通节点，c为hidden节点，当a与c连接，b与c连接后，a与b不会连接
+net_kernel:connect_node(Node)
 nodes()
 ets:tab2list(sys_dist)
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;&lt;code&gt;rpc&lt;/code&gt;&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;v
+&lt;pre&gt;&lt;code&gt;-kernel dist_auto_connect never
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;group_leader&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Every process is a member of some process group and all groups have a group leader. All I/O from the group is channeled to the group leader. When a new process is spawned, it gets the same group leader as the spawning process.
 &lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>
