@@ -121,13 +121,14 @@ net_kernel:start([&#39;test1@0.0.0.0&#39;]).
 
 &lt;p&gt;&lt;code&gt;-hidden&lt;/code&gt;&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;nodes()
+&lt;pre&gt;&lt;code&gt;Hidden connections are not published on either of the connected nodes
+nodes()
 ets:tab2list(sys_dist)
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;&lt;code&gt;rpc&lt;/code&gt;&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;-kernel dist_auto_connect never
+&lt;pre&gt;&lt;code&gt;v
 &lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>
