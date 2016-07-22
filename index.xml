@@ -126,6 +126,7 @@ a,b节点为普通节点，c为hidden节点，当a与c连接，b与c连接后，
 net_kernel:connect_node(Node)
 nodes()
 ets:tab2list(sys_dist)
+epmd
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;&lt;code&gt;rpc&lt;/code&gt;&lt;/p&gt;
@@ -138,6 +139,39 @@ ets:tab2list(sys_dist)
 
 &lt;pre&gt;&lt;code&gt;Every process is a member of some process group and all groups have a group leader. All I/O from the group is channeled to the group leader. When a new process is spawned, it gets the same group leader as the spawning process.
 &lt;/code&gt;&lt;/pre&gt;
+
+&lt;h5 id=&#34;3-ets:9f3b6997f78b7d4fd24f17461ec402ee&#34;&gt;3.ets&lt;/h5&gt;
+
+&lt;p&gt;&lt;code&gt;ets:all()&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Returns a list of all tables at the node.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;ets:info()&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;ets:new(Name,Op)&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;ets:first(Tab)&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;ets:last(Tab)
+ets:next(Tab,Key)
+ets:prev(Tab,Key)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;ets:select(Tab,MatchSpec)&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;ets:fun2ms
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h5 id=&#34;4-热更新:9f3b6997f78b7d4fd24f17461ec402ee&#34;&gt;4.热更新&lt;/h5&gt;
+
+&lt;p&gt;&lt;code&gt;c:l(Mod)&lt;/code&gt;&lt;/p&gt;
+
+&lt;h5 id=&#34;5-system-limit:9f3b6997f78b7d4fd24f17461ec402ee&#34;&gt;5.system_limit&lt;/h5&gt;
+
+&lt;h5 id=&#34;6-开源库:9f3b6997f78b7d4fd24f17461ec402ee&#34;&gt;6.开源库&lt;/h5&gt;
+
+&lt;p&gt;&lt;code&gt;recon&lt;/code&gt;&lt;/p&gt;
 </description>
     </item>
     

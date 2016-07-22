@@ -58,7 +58,7 @@
         },
         "datePublished": "2016-07-21",
         "description": "",
-        "wordCount":  272 
+        "wordCount":  297 
     }
     </script>
     
@@ -211,6 +211,7 @@ a,b节点为普通节点，c为hidden节点，当a与c连接，b与c连接后，
 net_kernel:connect_node(Node)
 nodes()
 ets:tab2list(sys_dist)
+epmd
 </code></pre>
 
 <p><code>rpc</code></p>
@@ -223,6 +224,39 @@ ets:tab2list(sys_dist)
 
 <pre><code>Every process is a member of some process group and all groups have a group leader. All I/O from the group is channeled to the group leader. When a new process is spawned, it gets the same group leader as the spawning process.
 </code></pre>
+
+<h5 id="3-ets:9f3b6997f78b7d4fd24f17461ec402ee">3.ets</h5>
+
+<p><code>ets:all()</code></p>
+
+<pre><code>Returns a list of all tables at the node.
+</code></pre>
+
+<p><code>ets:info()</code></p>
+
+<p><code>ets:new(Name,Op)</code></p>
+
+<p><code>ets:first(Tab)</code></p>
+
+<pre><code>ets:last(Tab)
+ets:next(Tab,Key)
+ets:prev(Tab,Key)
+</code></pre>
+
+<p><code>ets:select(Tab,MatchSpec)</code></p>
+
+<pre><code>ets:fun2ms
+</code></pre>
+
+<h5 id="4-热更新:9f3b6997f78b7d4fd24f17461ec402ee">4.热更新</h5>
+
+<p><code>c:l(Mod)</code></p>
+
+<h5 id="5-system-limit:9f3b6997f78b7d4fd24f17461ec402ee">5.system_limit</h5>
+
+<h5 id="6-开源库:9f3b6997f78b7d4fd24f17461ec402ee">6.开源库</h5>
+
+<p><code>recon</code></p>
 
     <div id="social-bar">
 	<ul class="rrssb-buttons clearfix">
