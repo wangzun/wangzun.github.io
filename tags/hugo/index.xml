@@ -2,19 +2,29 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Hugo on wangzun&#39;s blog</title>
-    <link>http://localhost:1313/tags/hugo/</link>
+    <link>http://wangzun.github.io/tags/hugo/</link>
     <description>Recent content in Hugo on wangzun&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 26 May 2016 16:05:06 +0800</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 12 Dec 2016 14:05:06 +0800</lastBuildDate>
+    <atom:link href="http://wangzun.github.io/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>restart</title>
+      <link>http://wangzun.github.io/posts/restart/</link>
+      <pubDate>Mon, 12 Dec 2016 14:05:06 +0800</pubDate>
+      
+      <guid>http://wangzun.github.io/posts/restart/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;http://www.jianshu.com/users/f3f29a3ca903/latest_articles&#34;&gt;其他文章&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>其他文章</title>
-      <link>http://localhost:1313/posts/hugo-create-blog/</link>
+      <link>http://wangzun.github.io/posts/hugo-create-blog/</link>
       <pubDate>Thu, 26 May 2016 16:05:06 +0800</pubDate>
       
-      <guid>http://localhost:1313/posts/hugo-create-blog/</guid>
+      <guid>http://wangzun.github.io/posts/hugo-create-blog/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;http://www.jianshu.com/users/f3f29a3ca903/latest_articles&#34;&gt;其他文章&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
