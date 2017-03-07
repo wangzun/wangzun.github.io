@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Think on wangzun&#39;s blog</title>
+    <link>http://wangzun.github.io/tags/think/</link>
+    <description>Recent content in Think on wangzun&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 12 Dec 2016 14:05:06 +0800</lastBuildDate>
+    <atom:link href="http://wangzun.github.io/tags/think/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>思考这个blog的意义</title>
+      <link>http://wangzun.github.io/posts/restart/</link>
+      <pubDate>Mon, 12 Dec 2016 14:05:06 +0800</pubDate>
+      
+      <guid>http://wangzun.github.io/posts/restart/</guid>
+      <description>&lt;p&gt;对于一个表达欲望弱的人，一年可以写多少blog? 对我来说是一年5篇。仔细想想和没有写差不多，当初弄这个的原因其一是想试试hugo这服务，其二就很多人都认为写blog有好处。比较明显的几点好处在于：可以提高写作水准，可以增强知识点的记忆（对于技术blog而言），还在于可以让外界可以知晓你的知识积累。当然能有这些个好处还在于你确实在认真的写blog，而不是一年才几篇可有可无的文章。&lt;/p&gt;
+
+&lt;p&gt;既然有实实在在的好处，问什么还是没法认真写。主要是这些好处短时间没法兑现，一个短期无法完成的目标总是会让你动力不足，当然可能也有对写blog有极高兴趣的人，这种也是存在的，哪些每天写一篇的可能就是这种人吧。不过动力不足的问题可能会可能会告一段落了，现实情况让我有写作的目的了。是这样的，由于对于现工作不满意开始观望其他工作，连续有几次面试，出了一些表达能力上面的问题，我自认还是比较热衷于技术，经常看技术书籍和其他人写的blog，但是在面试的时候总是一问一答模式，有时候自己主动说的时候也会断断续续，这到不是紧张的原因，而是确实知识面很散，自以为知道了，其实没有系统的整理，再多的&lt;strong&gt;Information&lt;/strong&gt;也不是&lt;strong&gt;knowledge&lt;/strong&gt;，这就是目前的症结，会导致面试官很片面的了解你。我自己反思了很久，觉得必须改变了。&lt;/p&gt;
+
+&lt;p&gt;回想起来，现在记忆最深刻的还是在公司技术组做分享的时候弄得那个和算法相关的主题，直到现在我都影响深刻，要知道距离现在已经有两年了，现在回想起两年前看过什么？有操作系统，有分布式的论文，有一些数据库的代码，但是具体内容已经一片模糊了，也许只有真正用到的时候才会在绞尽脑汁的时候想起。我看到过一句话，教是最好的学习，可以让你理解的更深刻，记忆更持久。确实有实例可以证明这点。最近在用一个叫 &lt;a href=&#34;https://zh.wikipedia.org/zh-hans/%E7%95%AA%E8%8C%84%E5%B7%A5%E4%BD%9C%E6%B3%95&#34;&gt;番茄工作法&lt;/a&gt; 的东西，这个东西的主要目的是提高注意力，增强效率，我用这个方法也是如此。我发现，设定一个明确的目标，一个可控的时间是极其有效，特别是如果可以将大目标分得很细的小目标的时候，完成一个小目标就像经验条涨了，一个大目标就像升级了一样。所以我决定多参与公司的技术分享，用可以教学的目标来学习新的知识，并系统的记录在blog里面，将目标分细，当最后记录在blog里的时候就算完成一个大目标。&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;&amp;ldquo;有一定成就的人物，无不是以任务为中心去做事。如果我们要干一件事，我们就要把这件事干成。如果我们要学一个技能，我们就要把这个技能学会。哪怕我们只不过读一本书，我们也要把这本书读完。&amp;rdquo;&lt;/em&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
