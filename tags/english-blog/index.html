@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en-us">
 
@@ -7,25 +6,15 @@
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-        <meta property="og:title" content=" erlang with soft real-time system &middot;  wangzun&#39;s blog" />
+        <meta property="og:title" content=" English Blog &middot;  wangzun&#39;s blog" />
         <meta property="og:site_name" content="wangzun&#39;s blog" />
-        <meta property="og:url" content="http://wangzun.github.io/posts/preemptive/" />
+        <meta property="og:url" content="http://wangzun.github.io/tags/english-blog/" />
 
     
-        <meta property="og:type" content="article" />
-        <meta property="og:article:published_time" content="2016-12-17T14:01:01&#43;08:00" />
-        <meta property="og:article:tag" content="English Blog" />
-        
-
-        <meta name="twitter:card" content="summary" />
-        <meta name="twitter:site" content="@" />
-        <meta name="twitter:creator" content="@" />
-        <meta name="twitter:title" content="erlang with soft real-time system" />
-        <meta name="twitter:description" content="" />
-        <meta name="twitter:url" content="http://wangzun.github.io/posts/preemptive/" />
+        <meta property="og:type" content="website" />
     
 
-        <title> erlang with soft real-time system &middot;  wangzun&#39;s blog</title>
+        <title> English Blog &middot;  wangzun&#39;s blog</title>
 
     
         <meta name="description" content="code and life" />
@@ -44,23 +33,10 @@
     
 
     
-        <link rel="canonical" href="http://wangzun.github.io/posts/preemptive/" />
-
+        <link href="http://wangzun.github.io/tags/english-blog/index.xml" rel="alternate" type="application/rss+xml" title="English Blog &middot; wangzun&#39;s blog" />
     
-    <script type="application/ld+json">
-    { 
-        "@context": "http://schema.org",
-        "@type": "Article",
-        "headline": "erlang with soft real-time system",
-        "author": {
-            "@type": "Person",
-            "name": "http://profiles.google.com/?rel=author"
-        },
-        "datePublished": "2016-12-17",
-        "description": "",
-        "wordCount":  295 
-    }
-    </script>
+        <link rel="canonical" href="http://wangzun.github.io/tags/english-blog/" />
+
     
     
     <style>
@@ -81,34 +57,38 @@
             
         </header>
 
+
 <main id="content">
 
-<article id="" class="posts">
-    <div class="post-stamp">
-        <time datetime="2016-12-17T14:01:01&#43;08:00">
+	<h1 class="post-title">English Blog</h1> 
+    
+        
+<section class="posts">
+	<h3 class="post-title">
+		<a href="http://wangzun.github.io/posts/preemptive/">erlang with soft real-time system</a>
+		<span class="separator"> &middot; </span>
+		<time datetime="2016-12-17T14:01:01&#43;08:00">
             17 Dec 2016
         </time>
-        <span class="taglist">
-        
-        &middot;
-        
+		<span class="taglist">
+		
+		&middot; 
+    	
             <a href="http://wangzun.github.io/tags/english-blog/">English Blog</a>
         
-        
-        </span>
-    </div>
-    <h1 class="post-title">erlang with soft real-time system</h1>
-    <p>as most erlang progamers know ,erlang is suitable for Distributed, reliable, soft real-time concurrent systems.many companies use erlang to solving their problem, like Whatsapp, RabbitMQ which need a large messge server. other feature is easy to understand but what was the soft real-time system?</p>
+    	
+		</span>
+	</h3>
+</section>
+    
 
-<p>soft real-time system is one of the real-time system which need server response on time, of course there have hard real-time system , just like high frequency trading system ,avionics , etc. they have a common character that have a absolutely deadline . a soft real time system was not so absolutely but can miss few deadlines. like sound, video，game , etc. why erlang can suitable a soft real-time system?</p>
-
-<p>erlang runtime system was just like a small operating system on computer, when it would create a number of scheduler when the system core numbers are, and scheduler runs two types of jobs: process and ports, every process or port share same time slice, when the time slice exhausted, it would be force tasked off execution, and another waited process or port be scheduled. erlang use preempive multitasking and every process have 2000 reductions, not each erlang function call cost reduction but also BIF, gc, ETS, send function would cost reduction, 2000 reductions means 0.1 ms, that was why erlang can build a soft real-time system. for example, there are 50 task, No.1 task cost 100ms, others cost 0.1ms. when erlang scheduler excuting No.1 task for 0.1ms, the No.1 task will be take off, and another task will executing. the long cost one can&rsquo;t stop the others, if the system require 100ms response, the 49 tasks up to grade, just one can&rsquo;t. the system can be called soft real-time system.</p>
-
-<p>if you want build soft real-time system, you can use erlang.</p>
-
-</article>
-
+    <nav class="pagination">
+	
+	<span class="page-number">Page 1 of 1</span>
+	
+</nav>
 </main>
+
 		<footer id="footer">
 			<section id="footer-message">&copy; wangzun&#39;s blog. All rights reserved. Powered by <a href="http://gohugo.io" target="_blank">Hugo</a>. <a href="https://github.com/kathyqian/crisp-ghost-theme" target="_blank">Crisp</a> theme by <a href="http://kathyqian.com" target="_blank">Kathy Qian</a>.</section>
 		</footer>
