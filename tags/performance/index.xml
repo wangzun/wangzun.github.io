@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Performance on wangzun&#39;s blog</title>
+    <link>http://wangzun.github.io/tags/performance/</link>
+    <description>Recent content in Performance on wangzun&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 17 Dec 2016 14:01:01 +0800</lastBuildDate>
+    <atom:link href="http://wangzun.github.io/tags/performance/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>关于性能优化</title>
+      <link>http://wangzun.github.io/posts/performance/</link>
+      <pubDate>Sat, 17 Dec 2016 14:01:01 +0800</pubDate>
+      
+      <guid>http://wangzun.github.io/posts/performance/</guid>
+      <description>&lt;p&gt;为什么要关注服务器性能？这是一个简单问题，因为这直接关系到钱。当你搭建一个服务器的时候，你必须要计算一下成本，而一台机器的cpu，内存，磁盘，带宽的不同价格也不一样，使用更小的参数得到更低的价格。这样看来充分使用cpu，内存，磁盘，带宽等成了关注焦点，如果你是运维人员，确实应该关注这些硬件内容，如果你是程序开发人员，当然也应该关注这些，但是应该从另一个角度了。开发人员关注的是整个软件系统，包括操作系统，数据库到应用程度。怎么样让整个软件系统合理利用硬件是软件开发人员的关注焦点。&lt;/p&gt;
+
+&lt;p&gt;怎么确定性能呢？普遍认为系统性能是比较主观复杂的东西，不想bug一样，只用对错之分，一般来说，性能的好坏取决于用户的性能预期。要辨别那些是好，那些是差，就必须要量化分析，内存消耗的具体数量，怎么做可以降低数量，cpu的利用率等等。有一个很重要的量化指标，那就是延时，对于一个服务器来说，客户的请求到返回数据所用的时间就是延时。比如一个网站，对于客户来说，出来网页显示准确，能够更快的显示是更好用户体验。延时是客户可以直接观察到了性能数据，他们不在乎你服务器内存怎么样，cpu怎么样。所以这个体现综合素质的数据往往世一个服务器上线使用前要测试的重点，其中从客户端到服务器再到客户端的总的延时可以分成很多小的时间间隔，这样小的延时可以分为网络，数据库读写，逻辑计算，文件IO等等，分成小块來测量分析对总的延时优化有重要作用，有很多现有的工具可以干这种事情。&lt;/p&gt;
+
+&lt;p&gt;人们使用动态跟踪技术來监控整个程序的延时分布，常用的工具有DTrace，DTrace不光监控用户，还监控内核。当一个系统很复杂的时候可能需要多种工具，有很多开发语言都用自己的配套监控工具，我比较熟悉的erlang和lua都有trace库可以用来调试。&lt;/p&gt;
+
+&lt;p&gt;就我自己而言，我在做游戏服务器开发，肯定是要让服务器承载的人数越多越好，要达到这个要求就必须去关注游戏服务器运行效率，可以多少人同时在线，一个地图的容量极限是多少，每个玩家消耗的内存，每秒的请求数，对数据库的请求数，游戏服务器有大量的数据在内存里面，应该多久存一次数据库。这些都要考虑，而且不仅仅是从性能方面，还要从游戏本身的需求考虑。目前正在开发的服务器软件，是用erlang搭建主体骨架，lua处理逻辑，两者用nif來连接。这样一个erlang + lua架构具体应该考虑那些呢？这个在刚开发的时候也仅仅考虑了一个大概，就现在而言，用事后诸葛亮的角度來说，起码要考虑这些东西：&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;cpu效率，用lua來处理大量逻辑有这方面的考虑，但是这里面有一个问题，erlang本身的调度是可以让cpu的利用率达到最大化，那是因为erlang的调度器设计如此，而erlang+lua架构需要用到erlang的nif方法，而nif是少有的脱离了erlang调度的方法，怎么在此架构上利用好服务器的多核成为焦点。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;内存问题，内存自然是消耗越少越好，erlang本身的内存消耗就相对于其他常用服务器开发语言如c++，golang等要大，但如果只是做主体架构的话，倒也不用考虑太多，一个游戏服务器内存消耗大头自然是在逻辑部分，和玩家数量紧密相关。一个luastate里面要包括lua代码，玩家数据，配置文件数据，如果luastate特别多的话，内存消耗就会非常大，使用多少个luastate（当然要和erlang的process架构相适应，否则这个游戏架构就没有意义）成了内存方面最关系的内容。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;网络问题,由于游戏内容服务器的分离，玩家，岛，地图，工会，战斗分别处于不同节点，这就要考虑大量的数据交互，以及跨节点内存读取，好在节点连接都是内网，就算消耗大也便宜。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;数据库方面，使用mongodb消耗内存是很大的，同时在玩家登陆，下线的时候会读写，地图等数据会定时存储，要考虑不要同时进行。事实上，如果服务器可以承载10w人同时在线就相当成功了，这也是开发的目标。&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
