@@ -6,13 +6,13 @@
     <description>Recent content in Performance on wangzun&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 17 Dec 2016 14:01:01 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 27 Dec 2016 14:01:01 +0800</lastBuildDate>
     <atom:link href="http://wangzun.github.io/tags/performance/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>关于性能优化</title>
       <link>http://wangzun.github.io/posts/performance/</link>
-      <pubDate>Sat, 17 Dec 2016 14:01:01 +0800</pubDate>
+      <pubDate>Tue, 27 Dec 2016 14:01:01 +0800</pubDate>
       
       <guid>http://wangzun.github.io/posts/performance/</guid>
       <description>&lt;p&gt;为什么要关注服务器性能？这是一个简单问题，因为这直接关系到钱。当你搭建一个服务器的时候，你必须要计算一下成本，而一台机器的cpu，内存，磁盘，带宽的不同价格也不一样，使用更小的参数得到更低的价格。这样看来充分使用cpu，内存，磁盘，带宽等成了关注焦点，如果你是运维人员，确实应该关注这些硬件内容，如果你是程序开发人员，当然也应该关注这些，但是应该从另一个角度了。开发人员关注的是整个软件系统，包括操作系统，数据库到应用程度。怎么样让整个软件系统合理利用硬件是软件开发人员的关注焦点。&lt;/p&gt;
