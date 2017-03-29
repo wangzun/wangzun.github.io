@@ -27,7 +27,65 @@
 
 &lt;h4 id=&#34;done:5aa714a3cb22d04be333e3cb231ca965&#34;&gt;done&lt;/h4&gt;
 
-&lt;p&gt;&amp;ndash;Todo&amp;ndash;&lt;/p&gt;
+&lt;p&gt;协议的性能主要关注数据包大小，加解包速度。为此我做了一个测试：让thitft，protobuf，erlang原生的&amp;rdquo;term_to_binary&amp;rdquo;和&amp;rdquo;binary_to_term&amp;rdquo;以及自己写的一个加解包程序来对同一个数据结构进行加解包，观察它们的大小和速度，所有的代码用erlang写成。数据结构为original():&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;list_data(Num) -&amp;gt;
+	lists:map(
+	  fun(Index) -&amp;gt;
+			  &amp;quot;test_list_data&amp;quot; ++ integer_to_list(Index)
+	  end,lists:seq(1,Num)).
+
+original() -&amp;gt;
+	{person,&amp;quot;wangzun&amp;quot;,&amp;quot;fsfaef83rsfs322g33dd&amp;quot;,&amp;quot;34242555&amp;quot;,list_data(10000),12,{location,&amp;quot;fasfsfaf&amp;quot;,&amp;quot;fafsaa&amp;quot;}}.
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;这个数据结构放在thrift文件里的定义为&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;struct Location {
+    1:string region,
+    2:string country,
+}
+struct Person{
+    1:string name,
+    2:string address,
+    3:string phone_number,
+    4:list&amp;lt;string&amp;gt; groups,
+    5:i32 age,
+    6:Location location,
+}
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;而放在protobuf里定义为&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;message Person {
+	required string name = 1;
+	required string address = 2;
+	required string phone_number = 3;
+	repeated string groups = 4;
+	required int32 age = 5;
+	optional Location location = 6;
+}
+
+message Location
+{
+    required string region = 1;
+    required string country = 2;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;如此，分别对该数据结构加解包100次，得出的结果为:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt; erlang term----------------------------------------------------------------
+ binanry size : 178991   encode time : 102640  decode time : 132598
+ simple proto --------------------------------------------------------------
+ binanry size : 168959   encode time : 411586  decode time : 455120
+ thrift --------------------------------------------------------------------
+ binanry size : 189016   encode time : 1361137  decode time : 1599532
+ protobuf ------------------------------------------------------------------
+ binanry size : 168957   encode time : 845535  decode time : 2166011
+&lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>
     
