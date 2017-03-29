@@ -6,8 +6,28 @@
     <description>Recent content in Posts on wangzun&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 27 Dec 2016 14:01:01 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 25 Jan 2017 14:01:01 +0000</lastBuildDate>
     <atom:link href="http://wangzun.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>游戏服务器使用协议分析</title>
+      <link>http://wangzun.github.io/posts/proto-analyze/</link>
+      <pubDate>Wed, 25 Jan 2017 14:01:01 +0000</pubDate>
+      
+      <guid>http://wangzun.github.io/posts/proto-analyze/</guid>
+      <description>
+
+&lt;h4 id=&#34;why:5aa714a3cb22d04be333e3cb231ca965&#34;&gt;why&lt;/h4&gt;
+
+&lt;p&gt;如果要开发一个网络游戏，自然需要在客户端服务器之间进行数据传输，但是数据传输是2进制数据，怎么识别数据呢？这就需要客户端和服务器之间做一个大家都认可的约定。这个约定就是我们说的网络协议。tcp/ip这类协议暂且不谈，这里主要分析应用层的协议。一个协议可以影响到很多方面，包括数据大小，序列化和反序列化的速度，如果一个服务器对性能要求很高，就一定要认真对待网络协议，当然用得很方便，在功能方面也要考虑。&lt;/p&gt;
+
+&lt;h4 id=&#34;now:5aa714a3cb22d04be333e3cb231ca965&#34;&gt;now&lt;/h4&gt;
+
+&lt;p&gt;目前的游戏开发领域，客户端和服务器的开发环境可以说是有很大的不同，使用的语言也大都不一样。这样在统一协议的时候就有很大的麻烦，除非对某些特性有必须的要求，否则大都会去找一些已经存在的协议，这些协议大都使用多年，值得信赖。目前比较出名的有:protobuf,thrift,msgpack等,当然如果对性能要求不高的还可以有json,xml这些选择。protobuf和thrift都是有协议号，每个协议结构的field也有编号，如此协议字段的顺序就不重要了，是快速开发的良好选择。比如你在服务器的某个协议上加一字段，但是客户端还没有来得及加入，但是这并不影响数据传输，加解包，很适合热更新，快速响应。不过要注意，加字段是没影响，但是减少一个字段，如果两边没有同步就会有问题了，这种可能需要特殊处理了。&lt;/p&gt;
+
+&lt;h4 id=&#34;donw:5aa714a3cb22d04be333e3cb231ca965&#34;&gt;donw&lt;/h4&gt;
+</description>
+    </item>
     
     <item>
       <title>关于性能优化</title>
