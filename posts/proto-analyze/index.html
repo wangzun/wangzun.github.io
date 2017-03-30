@@ -58,7 +58,7 @@
         },
         "datePublished": "2017-01-25",
         "description": "",
-        "wordCount":  147 
+        "wordCount":  261 
     }
     </script>
     
@@ -158,11 +158,35 @@ message Location
  binanry size : 168959   encode time : 411586  decode time : 455120
  thrift --------------------------------------------------------------------
  binanry size : 189016   encode time : 1361137  decode time : 1599532
- protobuf ------------------------------------------------------------------
+ protobuff ------------------------------------------------------------------
  binanry size : 168957   encode time : 845535  decode time : 2166011
 </code></pre>
 
-<p>这个结果有部分是预料之中，有些是没想到，其中erlang原生的encode和自己写的简单加解包程序最快是预料之中的，毕竟是最简单的版本，没有复杂功能。而protobuf的速度比thrift更快也在预料之中，因为protobuf会对数值型类型进行压缩。不过protobuf的encode比thrift快而decode慢到是没有预料到。最后查看资料，发现是解析每一块数据都要根据序号找到对应的位置然后再插入到已解析好的数据中，这么做的原因是protobuf有序号可以字段乱序，欠缺，这是一个可以兼容旧协议的特性。thrift同样可以乱序但是不能欠缺，两者在实现上有很大不同。当然，性能上的高消耗很多时候都是为了更多的功能,thrift和protobuf都是值得尝试的网络协议。</p>
+<p>这个结果有部分是预料之中，有些是没想到，其中erlang原生的encode和自己写的简单加解包程序最快是预料之中的，毕竟是最简单的版本，没有复杂功能。而protobuf的速度比thrift更快也在预料之中，因为protobuf会对数值型类型进行压缩。不过protobuf的encode比thrift快而decode慢到是没有预料到。查看资料，发现这两个协议的主要特性很相似，只有一些细节不同，看不出为什么会这样。要考察效率最好还是用测试的方法，我将数据结构里的那个list长度调小，调到10个，得到结果为:</p>
+
+<pre><code> erlang ---------------------------------------------------------------------
+ binanry size : 248   encode time : 190  decode time : 253
+ simple --------------------------------------------------------------------
+ binanry size : 206   encode time : 806  decode time : 665
+ thrift ---------------------------------------------------------------------
+ binanry size : 283   encode time : 4168  decode time : 7304
+ protobuff ----------------------------------------------------------------------
+ binanry size : 204   encode time : 1142  decode time : 2642
+</code></pre>
+
+<p>再将list的长度调整为100</p>
+
+<pre><code> erlang ---------------------------------------------------------------------
+ binanry size : 1689   encode time : 1010  decode time : 1009
+ simple --------------------------------------------------------------------
+ binanry size : 1557   encode time : 4250  decode time : 3378
+ thrift ---------------------------------------------------------------------
+ binanry size : 1814   encode time : 12816  decode time : 19352
+ protobuff ----------------------------------------------------------------------
+ binanry size : 1555   encode time : 7055  decode time : 19432
+</code></pre>
+
+<p>发现当list长度小于100时，protobuff的decode效率高，大于100时则相反。看来是两者在list的解包上有很大的不同，这个就只用看代码了。最后终于发现了，thrift用的是lists:mapfoldl来依次解包，protobuff用的是递归将解好的值放在list头部像这样:[H|List],解完后用lists:reverse翻转，就是这个翻转消耗时间。当然我看的都是erlang的代码实现，可能其他的语言实现效率有很大不同，毕竟erlang没有指针，另外这个protobuff的代码不是官方的，优化得可能不太好，还有很大的提升空间。</p>
 
 </article>
 
